@@ -1,0 +1,22 @@
+const express = require("express")
+const authRouter = express.Router()
+const { registerUser, loginUser, logoutUser, getMyProfile, updateProfile } = require("../controller/auth.controller");
+const authMiddleware = require("../middleware/auth.middleware")
+
+
+
+
+authRouter.post("/register", registerUser)
+authRouter.post("/login", loginUser)
+authRouter.post("/logout", logoutUser)
+authRouter.get("/me", authMiddleware, getMyProfile)
+authRouter.put("/updateProfile", authMiddleware, updateProfile)
+authRouter.get("/check-authentication",authMiddleware,(req,res)=>{
+    return res.status(200).json({
+        success:true,
+        user:req.user
+    })
+})
+
+
+module.exports = authRouter
