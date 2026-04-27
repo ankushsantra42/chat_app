@@ -2,9 +2,12 @@ const express = require("express")
 const authRouter = express.Router()
 const { registerUser, loginUser, logoutUser, getMyProfile, updateProfile } = require("../controller/auth.controller");
 const authMiddleware = require("../middleware/auth.middleware")
+const arcjetProtection = require("../middleware/arcjet.middleware")
 
 
 
+
+// authRouter.use(arcjetProtection)
 
 authRouter.post("/register", registerUser)
 authRouter.post("/login", loginUser)
