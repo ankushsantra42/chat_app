@@ -7,7 +7,7 @@ const arcjetProtection = require("../middleware/arcjet.middleware")
 
 
 
-// authRouter.use(arcjetProtection)
+authRouter.use(arcjetProtection)
 
 authRouter.post("/register", registerUser)
 authRouter.post("/login", loginUser)
