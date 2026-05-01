@@ -15,10 +15,7 @@ authRouter.post("/logout", logoutUser)
 authRouter.get("/me", authMiddleware, getMyProfile)
 authRouter.put("/updateProfile", authMiddleware, updateProfile)
 authRouter.get("/check-authentication",authMiddleware,(req,res)=>{
-    return res.status(200).json({
-        success:true,
-        user:req.user
-    })
+    return res.status(200).json(req.user)
 })
 
 

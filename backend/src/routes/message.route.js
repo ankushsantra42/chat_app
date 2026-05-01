@@ -13,7 +13,7 @@ const arcjetProtection = require('../middleware/arcjet.middleware')
 messageRouter.use(arcjetProtection)
 
 messageRouter.get("/all-contacts", authMiddleware, getAllContacts);
-messageRouter.get("/charts", authMiddleware, getChatPartners)
+messageRouter.get("/chats", authMiddleware, getChatPartners)
 messageRouter.get("/:id", authMiddleware, getMessagesByUserId);
 messageRouter.post("/send/:id", authMiddleware, sendMessage);
 
