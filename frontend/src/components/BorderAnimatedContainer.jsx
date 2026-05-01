@@ -6,5 +6,9 @@ function BorderAnimatedContainer({ children }) {
       {children}
     </div>
   );
+    // <div className="w-full h-full [background:linear-gradient(45deg,#007BFF,#FF008A,#FFD700,_100%)_padding-box,conic-gradient(from_var(--border-angle),#007BFF,_80%,_#FF008A,_90%,_#FFD700,_100%)_border-box] rounded-2xl border border-transparent animate-border flex overflow-hidden">
+    //   {children}
+    // </div>
+  // );
 }
 export default BorderAnimatedContainer;
